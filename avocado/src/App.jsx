@@ -8,6 +8,10 @@ const useClasses = makeStyles({
     color : 'red',
     display : 'flex',
     flexDirection : 'column',
+    alignItems : 'center',
+    justifyContent : 'center', // not working as expected
+    marginTop : '50%',
+    marginBottom : '50%',
   }
 })
 

@@ -6,7 +6,7 @@ import { makeStyles } from '@griffel/react'
 const useClasses = makeStyles({
     table : {
         width: '500px',
-        height: '200px', // bug: child component is bigger than parent component
+        // height: '200px', // bug: child component is bigger than parent component
     }
 })
 
