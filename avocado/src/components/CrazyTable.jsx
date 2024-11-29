@@ -1,5 +1,15 @@
 import { Button, Form, Input, InputNumber, Popconfirm, Table, Typography } from "antd";
 import { useState } from "react";
+
+import { makeStyles } from '@griffel/react'
+
+const useClasses = makeStyles({
+    table : {
+        width: '500px',
+        height: '200px', // bug: child component is bigger than parent component
+    }
+})
+
 const originData = Array.from({ length: 8 }).map((_, i) => ({
     key: i.toString(),
     name: `Edward ${i}`,
@@ -43,6 +53,8 @@ const originData = Array.from({ length: 8 }).map((_, i) => ({
   
   
 export default function CrazyTable() {
+    const classes = useClasses();
+
     const [form] = Form.useForm();
     const [data, setData] = useState(originData);
     const initialEditingItem = {key: "", isNew: false};
@@ -151,6 +163,7 @@ export default function CrazyTable() {
     });
   
     return (
+        <div className={classes.table}>
       <Form form={form} component={false}>
         <Table
           components={{
@@ -176,5 +189,6 @@ export default function CrazyTable() {
             }
         }>add 1 row</Button>
       </Form>
+      </div>
     );
   }
