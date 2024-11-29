@@ -171,7 +171,8 @@ export default function CrazyTable() {
                     age: undefined,
                     address: "",
                 }]);
-                // setEditingItem({key :newEntryKey, isNew: true});
+                setEditingItem({key :newEntryKey, isNew: true});
+                form.setFieldsValue({ name: "", age: "", address: ""});
             }
         }>add 1 row</Button>
       </Form>
